@@ -14,10 +14,6 @@
   cursor: pointer;
 }
 
-.dropdown:hover .dropbtn {
-  background-color: var(--foreground);
-}
-
 .dropdown_content {
   /* display: none; */
   position: absolute;

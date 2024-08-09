@@ -2,14 +2,22 @@
 @keyframes fade-in {
   0% {
     opacity: 0;
-    bottom: -90%;
+    top: 20%;
     transform: scale(0);
     display: none;
   }
 
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(1.1);
+  }
+
   100% {
     opacity: 1;
-    bottom: 0;
+    top: 0;
     transform: scale(1);
     display: block;
   }
@@ -24,7 +32,6 @@
 
   100% {
     opacity: 0;
-    bottom: -90%;
     transform: scale(0);
     display: none;
   }

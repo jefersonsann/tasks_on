@@ -4,6 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <meta name="application-name" content="TasksOn" />
+    <meta name="description" content="Gerencie suas tarefas com facilidade!" />
+    <meta
+      name="keywords"
+      content="TasksOn, Gerenciador de Tarefas, Tarefas Pessoais, Tarefas Companheiras"
+    />
+    <meta name="author" content="Jeferson Santos" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="pt-BR" />
+
+    <meta property="og:title" content="TasksOn - Gerenciador de Tarefas" />
+    <meta
+      property="og:description"
+      content="Gerencie suas tarefas com facilidade!"
+    />
+    <meta
+      property="og:image"
+      content="http://taskson.versel.com/next/assets/img/taskson-logo.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://taskson.versel.com/next/" />
+    <meta property="og:site_name" content="TasksOn" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@TasksOn" />
+    <meta name="twitter:creator" content="@TasksOn" />
+    <meta name="twitter:title" content="TasksOn - Gerenciador de Tarefas" />
+    <meta
+      name="twitter:description"
+      content="Gerencie suas tarefas com facilidade!"
+    />
+    <meta
+      name="twitter:image"
+      content="http://taskson.versel.com/next/assets/img/taskson-logo.png"
+    />
+    <meta name="twitter:domain" content="tasks-on.com" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="TasksOn" />
+
     <link rel="stylesheet" href="./css/styles.css" />
     <title>TasksOn</title>
   </head>
@@ -17,18 +58,33 @@
           <h1 class="logo" title="TasksOn">
             Tasks<span class="primary">O</span>n
           </h1>
-          <div class="menu btn_header">
-            <img src="./assets/svg/more_horiz.svg" alt="Menu" />
-          </div>
+          <button
+            type="button"
+            title="Botão modal nova task"
+            class="menu btn_header"
+            onclick="dialog('tasks')"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="35px"
+              viewBox="0 -960 960 960"
+              width="35px"
+              fill="#111111"
+            >
+              <path
+                d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </header>
     <main>
       <div class="container">
-        <section id="search">
+        <section>
           <div class="search">
             <form id="search_form" data-search="tasks">
-              <button type="submit">
+              <button type="submit" title="Botão search">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="24px"
@@ -50,7 +106,7 @@
             </form>
           </div>
         </section>
-        <section id="tasks">
+        <section>
           <h1 class="section_title">Tasks</h1>
           <div class="tasks" data-tasks="list">
             <div class="task" data-id="1">
@@ -94,7 +150,7 @@
                 <div class="task_header-timesDorp">
                   <span class="task_times">1h 30m</span>
                   <div class="dropdown">
-                    <button onclick="myDropdown()" class="dropbtn">
+                    <span class="dropbtn">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         height="24px"
@@ -106,10 +162,22 @@
                           d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"
                         />
                       </svg>
-                    </button>
-                    <div id="myDropdown" class="dropdown_content">
-                      <button class="dropdown_content-item">Editar</button>
-                      <button class="dropdown_content-item">Excluir</button>
+                    </span>
+                    <div class="dropdown_content">
+                      <button
+                        class="dropdown_content-item"
+                        title="Botão editar"
+                        type="button"
+                      >
+                        Editar
+                      </button>
+                      <button
+                        class="dropdown_content-item"
+                        title="Botão excluir"
+                        type="button"
+                      >
+                        Excluir
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -122,64 +190,43 @@
           </div>
         </section>
       </div>
-      <div aria-modal="true">
-        <button
-          type="button"
-          class="btn_new-task"
-          id="new_task"
-          title="Nova task"
-          aria-dialog="tasks"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="40px"
-            viewBox="0 -960 960 960"
-            width="40px"
-            fill="#111111"
-          >
-            <path
-              d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
+      <dialog data-dialog="tasks">
+        <form class="tasks_form dialog_content">
+          <div class="tasks_form-field">
+            <label for="task_title">Título:</label>
+            <input
+              type="text"
+              id="task_title"
+              name="task_title"
+              placeholder="Digite um titulo"
+              autocomplete="off"
+              required
             />
-          </svg>
-        </button>
-        <dialog id="newTaskDialog">
-          <form class="tasks_form dialog_content">
-            <div class="tasks_form-field">
-              <label for="task_title">Título:</label>
-              <input
-                type="text"
-                id="task_title"
-                name="task_title"
-                placeholder="Digite um titulo"
-                autocomplete="off"
-                required
-              />
-            </div>
-            <div class="tasks_form-field">
-              <label for="task_description">Descrição:</label>
-              <textarea
-                id="task_description"
-                name="task_description"
-                placeholder="Digite uma descrição"
-                required
-              ></textarea>
-            </div>
-            <div class="tasks_form-actions">
-              <button type="submit">Salvar</button>
-              <button type="reset">Limpar</button>
-            </div>
-          </form>
-        </dialog>
-      </div>
+          </div>
+          <div class="tasks_form-field">
+            <label for="task_description">Descrição:</label>
+            <textarea
+              id="task_description"
+              name="task_description"
+              placeholder="Digite uma descrição"
+              required
+            ></textarea>
+          </div>
+          <div class="tasks_form-actions">
+            <button type="submit" title="Botão salvar">Salvar</button>
+            <button type="reset" title="Botão reset">Limpar</button>
+          </div>
+        </form>
+      </dialog>
     </main>
     <footer>
       <div class="container">
-        <span class="logo" style="font-size: 1rem" title="TasksOn">
+        <span class="logo" title="TasksOn">
           Tasks<span class="primary">O</span>n
         </span>
         &copy;2024
       </div>
     </footer>
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/main.js" defer></script>
   </body>
 </html>

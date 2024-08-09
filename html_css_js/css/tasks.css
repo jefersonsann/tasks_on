@@ -87,8 +87,8 @@
 .task p {
   padding: 0 0.52rem;
   display: -webkit-box;
-  line-clamp: 4;
   -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   opacity: 0.925;
@@ -101,29 +101,6 @@
   transition: all 0.3s ease;
 }
 
-.btn_new-task {
-  position: absolute;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 65px;
-  height: 65px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 3rem;
-  line-height: 1rem;
-  color: var(--background);
-  background-color: var(--primary);
-  border: 4px solid var(--background-soft);
-  border-radius: 50%;
-  cursor: pointer;
-}
-dialog#newTaskDialog {
-  width: 100%;
-  max-width: 660px;
-}
 .tasks_form {
   display: flex;
   flex-direction: column;
