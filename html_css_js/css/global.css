@@ -49,6 +49,16 @@ body {
   font-weight: 600;
 }
 
+/* SECTIONS */
+.sections {
+}
+
+.section_title {
+  font-weight: 200;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
 footer {
   text-align: center;
   width: 100%;

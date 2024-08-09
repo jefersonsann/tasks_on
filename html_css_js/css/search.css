@@ -1,0 +1,28 @@
+#search_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 0 0.5rem;
+  margin: 1rem 0;
+  background-color: var(--background-soft);
+  border-radius: 99999px;
+}
+
+#search_form button {
+  padding: 0.5rem;
+  border-right: 1px solid var(--background);
+  cursor: pointer;
+}
+#search_form button img {
+  width: 30px;
+  height: 30px;
+}
+#search_form input {
+  font-size: 1.1rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: var(--foreground);
+}
