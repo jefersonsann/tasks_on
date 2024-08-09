@@ -1,18 +1,26 @@
 .tasks {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(1, minmax(280px, 1fr));
   gap: 1rem;
 }
 
 .task {
-  border-radius: 20px;
-  padding: 1rem;
-  background: linear-gradient(
-    120deg,
-    hsl(224deg 100% 30%),
-    hsl(224deg 100% 20%)
-  );
-  /* background-color: var(--background-soft); */
+  border-radius: 15px;
+  padding: 0.4rem 0.4rem 0.8rem 1rem;
+  color: var(--background);
+  background: linear-gradient(120deg, hsl(0, 0%, 100%), hsl(0, 0%, 94%));
+  animation: fade-in 0.4s forwards;
+  overflow: hidden;
+}
+
+.task_bg_color {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 100%;
+  z-index: -1;
 }
 
 .task_header {
@@ -21,36 +29,12 @@
   align-items: center;
 }
 
-#task_status {
-  display: flex;
-  align-self: center;
-  gap: 0.5rem;
-
+.task_status {
   font-weight: 500;
-  padding: 0.2rem 0.5rem;
-  color: var(--foreground);
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
-}
-
-#task_status svg {
-  transform: rotate(-90deg);
-}
-
-.dropdown:hover #task_status svg {
-  transform: rotate(450deg);
-}
-
-.task_header .dropdown_content-item {
-  text-align: start;
-}
-
-.task_header .dropdown_content-item {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.task_header .dropdown_content-item:last-child {
-  border-bottom: none;
+  padding: 0.4rem 0.8rem;
+  color: var(--background);
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
 }
 
 .task_header-timesDorp {
@@ -68,7 +52,6 @@
 .task_content {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 }
 
 .task_infos {
@@ -79,26 +62,20 @@
   font-size: 1.8rem;
   font-weight: 600;
   white-space: nowrap;
+  margin: 0.4rem 0;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
 }
 
 .task p {
-  padding: 0 0.52rem;
+  padding: 0 0.2rem;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   opacity: 0.925;
-}
-
-.task_header-timesDorp .dropdown .dropbtn {
-  padding: 0.4rem;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  transition: all 0.3s ease;
 }
 
 .tasks_form {

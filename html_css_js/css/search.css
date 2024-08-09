@@ -1,25 +1,34 @@
-#search_form {
+.search,
+[data-search="tasks"] {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-
+}
+[data-search="tasks"] {
+  width: 100%;
+  max-width: 280px;
   padding: 0 0.5rem;
   margin: 1rem 0;
   background-color: var(--background-soft);
   border-radius: 99999px;
+  transition: max-width 0.3s ease-in-out;
+}
+[data-search="tasks"]:focus,
+[data-search="tasks"]:focus-within {
+  max-width: 680px;
 }
 
-#search_form button {
+[data-search="tasks"] button {
   padding: 0.5rem;
   border-right: 1px solid var(--background);
   cursor: pointer;
 }
-#search_form button svg {
+[data-search="tasks"] button svg {
   width: 30px;
   height: 30px;
 }
-#search_form input {
+[data-search="tasks"] input {
   font-size: 1.1rem;
   width: 100%;
   border: none;
