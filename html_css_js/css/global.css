@@ -82,3 +82,7 @@ footer {
   margin-top: 1rem;
   border-top: 1px solid var(--background-soft);
 }
+
+footer .logo {
+  font-size: 1rem;
+}

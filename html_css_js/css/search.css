@@ -15,7 +15,7 @@
   border-right: 1px solid var(--background);
   cursor: pointer;
 }
-#search_form button img {
+#search_form button svg {
   width: 30px;
   height: 30px;
 }
