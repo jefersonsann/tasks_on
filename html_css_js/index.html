@@ -50,40 +50,38 @@
   </head>
   <body>
     <header>
-      <div class="container">
-        <div class="header">
-          <div class="user btn_header">
-            <img src="./assets/img/eumesmo.png" alt="Jeferson Santos" />
-          </div>
-          <h1 class="logo" title="TasksOn">
-            Tasks<span class="primary">O</span>n
-          </h1>
-          <button
-            type="button"
-            title="Botão modal nova task"
-            class="menu btn_header"
-            onclick="dialog('tasks')"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="35px"
-              viewBox="0 -960 960 960"
-              width="35px"
-              fill="#111111"
-            >
-              <path
-                d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
-              />
-            </svg>
-          </button>
+      <div class="header">
+        <div class="user btn_header">
+          <img src="./assets/img/eumesmo.png" alt="Jeferson Santos" />
         </div>
+        <h1 class="logo" title="TasksOn">
+          Tasks<span class="primary">O</span>n
+        </h1>
+        <button
+          type="button"
+          title="Botão modal nova task"
+          class="menu btn_header"
+          onclick="dialog('tasks')"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="35px"
+            viewBox="0 -960 960 960"
+            width="35px"
+            fill="#111111"
+          >
+            <path
+              d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
+            />
+          </svg>
+        </button>
       </div>
     </header>
-    <main>
-      <div class="container">
+    <div class="container">
+      <main>
         <section>
           <div class="search">
-            <form id="search_form" data-search="tasks">
+            <form data-search="tasks">
               <button type="submit" title="Botão search">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -108,124 +106,52 @@
         </section>
         <section>
           <h1 class="section_title">Tasks</h1>
-          <div class="tasks" data-tasks="list">
-            <div class="task" data-id="1">
-              <div class="task_header">
-                <div class="dropdown">
-                  <div class="dropbtn" id="task_status">
-                    <span>Pendente</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#e8eaed"
-                    >
-                      <path
-                        d="M640-80 240-480l400-400 71 71-329 329 329 329-71 71Z"
-                      />
-                    </svg>
-                  </div>
-                  <form id="status" class="dropdown_content">
-                    <input
-                      class="dropdown_content-item"
-                      type="submit"
-                      value="Pendente"
-                      name="pending"
-                    />
-                    <input
-                      class="dropdown_content-item"
-                      type="submit"
-                      value="Em processo"
-                      name="in_progress"
-                    />
-                    <input
-                      class="dropdown_content-item"
-                      type="submit"
-                      value="Finalizada"
-                      name="finish"
-                    />
-                  </form>
-                </div>
-                <div class="task_header-timesDorp">
-                  <span class="task_times">1h 30m</span>
-                  <div class="dropdown">
-                    <span class="dropbtn">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="var(--foreground)"
-                      >
-                        <path
-                          d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"
-                        />
-                      </svg>
-                    </span>
-                    <div class="dropdown_content">
-                      <button
-                        class="dropdown_content-item"
-                        title="Botão editar"
-                        type="button"
-                      >
-                        Editar
-                      </button>
-                      <button
-                        class="dropdown_content-item"
-                        title="Botão excluir"
-                        type="button"
-                      >
-                        Excluir
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="task_content">
-                <h2>${title}</h2>
-                <p>${description}</p>
-              </div>
-            </div>
-          </div>
+          <div class="tasks" data-tasks="list"></div>
         </section>
-      </div>
-      <dialog data-dialog="tasks">
-        <form class="tasks_form dialog_content">
-          <div class="tasks_form-field">
-            <label for="task_title">Título:</label>
-            <input
-              type="text"
-              id="task_title"
-              name="task_title"
-              placeholder="Digite um titulo"
-              autocomplete="off"
-              required
-            />
-          </div>
-          <div class="tasks_form-field">
-            <label for="task_description">Descrição:</label>
-            <textarea
-              id="task_description"
-              name="task_description"
-              placeholder="Digite uma descrição"
-              required
-            ></textarea>
-          </div>
-          <div class="tasks_form-actions">
-            <button type="submit" title="Botão salvar">Salvar</button>
-            <button type="reset" title="Botão reset">Limpar</button>
-          </div>
-        </form>
-      </dialog>
-    </main>
+        <dialog data-dialog="tasks">
+          <form class="tasks_form dialog_content">
+            <div class="tasks_form-field">
+              <label for="task_title">Título:</label>
+              <input
+                type="text"
+                id="task_title"
+                name="task_title"
+                placeholder="Digite um titulo"
+                autocomplete="off"
+                value="Titulo da task"
+                required
+              />
+            </div>
+            <div class="tasks_form-field">
+              <label for="task_description">Descrição:</label>
+              <textarea
+                id="task_description"
+                name="task_description"
+                placeholder="Digite uma descrição"
+                required
+              >
+Descrição da task</textarea
+              >
+            </div>
+            <div class="tasks_form-actions">
+              <button type="submit" title="Botão salvar">Salvar</button>
+              <button
+                type="button"
+                title="Botão cancel"
+                onclick="dialog('tasks')"
+              >
+                Cancelar
+              </button>
+            </div>
+          </form>
+        </dialog>
+      </main>
+    </div>
     <footer>
-      <div class="container">
-        <span class="logo" title="TasksOn">
-          Tasks<span class="primary">O</span>n
-        </span>
-        &copy;2024
-      </div>
+      <span class="logo" title="TasksOn">
+        Tasks<span class="primary">O</span>n
+      </span>
+      &copy;2024
     </footer>
     <script type="module" src="./js/main.js" defer></script>
   </body>
