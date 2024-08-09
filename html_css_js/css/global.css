@@ -19,6 +19,22 @@ img {
   height: auto;
 }
 
+dialog {
+  background: transparent;
+  border: none;
+  inset: 0;
+  animation: fade-out 0.3s ease-out;
+}
+
+dialog[open] {
+  animation: fade-in 0.3s ease-out;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: backdrop-fade-in 0.3s ease-out forwards;
+}
+
 html {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
