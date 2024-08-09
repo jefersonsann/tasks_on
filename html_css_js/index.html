@@ -54,18 +54,69 @@
           <h1 class="section_title">Tasks</h1>
           <div class="tasks" data-tasks="list">
             <div class="task" data-id="1">
+              <div class="task_header">
+                <div class="dropdown">
+                  <div class="dropbtn" id="task_status">
+                    <span>Pendente</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#e8eaed"
+                    >
+                      <path
+                        d="M640-80 240-480l400-400 71 71-329 329 329 329-71 71Z"
+                      />
+                    </svg>
+                  </div>
+                  <form id="status" class="dropdown_content">
+                    <input
+                      class="dropdown_content-item"
+                      type="submit"
+                      value="Pendente"
+                      name="pending"
+                    />
+                    <input
+                      class="dropdown_content-item"
+                      type="submit"
+                      value="Em processo"
+                      name="in_progress"
+                    />
+                    <input
+                      class="dropdown_content-item"
+                      type="submit"
+                      value="Finalizada"
+                      name="finish"
+                    />
+                  </form>
+                </div>
+                <div class="task_header-timesDorp">
+                  <span class="task_times">1h 30m</span>
+                  <div class="dropdown">
+                    <button onclick="myDropdown()" class="dropbtn">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="var(--foreground)"
+                      >
+                        <path
+                          d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"
+                        />
+                      </svg>
+                    </button>
+                    <div id="myDropdown" class="dropdown_content">
+                      <button class="dropdown_content-item">Editar</button>
+                      <button class="dropdown_content-item">Excluir</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="task_content">
-                <h2>
-                  Toda task é fundamental para um bom gerenciamento e controle
-                  de desenvolvimento.
-                </h2>
-                <p>
-                  Descrição da task. Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Neque explicabo dolorum illo, eius
-                  blanditiis unde quisquam vitae consectetur impedit nisi. Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Magni,
-                  maxime.
-                </p>
+                <h2>${title}</h2>
+                <p>${description}</p>
               </div>
             </div>
           </div>
